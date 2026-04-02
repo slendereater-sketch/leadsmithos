@@ -1,0 +1,4 @@
+{
+  "name": "Super Nebula",
+  "shader": "float zoom=(0.94 - b*0.08)*z; float decay=0.97; float aspect=1920.0/1080.0; float2 v=uv-0.5; v.x *= aspect; float d=length(v); float shell=smoothstep(0.3, 0.0, abs(d - 0.2 - b*0.5)); float4 p=ptx.Sample(s1, uv*zoom+(1.0-zoom)*0.5); float3 color=0.5 + 0.5 * cos(t*2.0 + length(v)*5.0 + float3(0,2,4)); return saturate(p*decay + float4(color*shell*(b*2.0+0.2), 1.0));"
+}

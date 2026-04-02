@@ -1,0 +1,4 @@
+{
+  "name": "Flow Preset 13 (Radial)",
+  "shader": "float aspect = 1920.0/1080.0; float2 v = uv - 0.5; v.x *= aspect; float d = length(v); float pulse = sin(d * 4.0 - t * 3.0 + b * 5.0); float mask = smoothstep(0.1, 0.0, abs(pulse) - 0.05); float4 p = ptx.Sample(s1, uv * (0.98 * z) + (1.0 - 0.98 * z) * 0.5); float3 col = lerp(float3(0.65, 0.20, 0.31), float3(0.96, 0.94, 0.26), sin(t + d)) * mask * (b + 0.2); return saturate(p * 0.94 + float4(col, 1.0));"
+}

@@ -1,0 +1,4 @@
+{
+  "name": "Flow Preset 99 (Tunnel)",
+  "shader": "float2 v = (uv - 0.5) * 2.0; float ang = atan2(v.y, v.x); if(6.0 > 0.0) ang = abs(frac(ang * 6.0 / 6.28) - 0.5); float dist = length(v); float2 tube = float2(ang, 0.5 / (dist + 0.01) + t * 0.4); float pat = sin(tube.y * 10.0 + b * 2.0); float3 col = float3(0.93, 0.92, 0.14) * (smoothstep(0.2, 0.8, pat) + 0.1) * (1.0 - dist) * (b + 0.1); float4 p = ptx.Sample(s1, uv * (0.96 * z) + (1.0 - 0.96 * z) * 0.5); return saturate(p * 0.95 + float4(col, 1.0));"
+}

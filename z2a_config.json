@@ -1,0 +1,48 @@
+﻿{
+    "audio": "pipewire",
+    "bootloader": "systemd-boot",
+    "desktop-environment": "gnome",
+    "gfx_driver": "AMD",
+    "hostname": "LeadSmith-Z2A",
+    "kernels": ["linux-g14"],
+    "language": "en_US",
+    "layout": "us",
+    "mirror-region": "United States",
+    "nic": "NetworkManager",
+    "ntp": true,
+    "packages": ["visual-studio-code-bin", "blender", "supercollider", "python-pygame", "python-psutil", "python-textual", "python-rich", "git", "kitty"],
+    "parallel downloads": 5,
+    "profile": "desktop",
+    "storage": {
+        "disk": "/dev/nvme0n1",
+        "wipe": true
+    },
+    "disk_layouts": [
+        {
+            "device": "/dev/nvme0n1",
+            "partitions": [
+                {
+                    "boot": true,
+                    "mountpoint": "/boot",
+                    "size": "512MiB",
+                    "type": "fat32"
+                },
+                {
+                    "mountpoint": "/",
+                    "size": "100%",
+                    "type": "ext4"
+                }
+            ],
+            "wipe": true
+        }
+    ],
+    "timezone": "UTC",
+    "users": [
+        {
+            "username": "leadsmith",
+            "password": "forge",
+            "is_sudo": true,
+            "groups": ["wheel", "video", "audio"]
+        }
+    ]
+}

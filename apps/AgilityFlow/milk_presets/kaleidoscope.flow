@@ -1,0 +1,4 @@
+{
+  "name": "Kaleidoscope",
+  "shader": "float aspect=1920.0/1080.0; float2 v=uv-0.5; v.x *= aspect; float ang = atan2(v.y, v.x); float dist = length(v); float sides = 6.0; ang = abs(frac(ang*sides/6.28 + t*0.05) - 0.5); v = float2(cos(ang), sin(ang)) * dist; float zoom=0.96*z; float4 p=ptx.Sample(s1, uv*zoom+(1.0-zoom)*0.5); float flower = smoothstep(0.1, 0.0, abs(v.x - 0.1 - b*0.3)); float3 col = float3(0.5+0.5*sin(t+dist*10.0), 0.2, 0.8) * flower * (b*2.0+0.2); return saturate(p*0.95 + float4(col, 1.0));"
+}

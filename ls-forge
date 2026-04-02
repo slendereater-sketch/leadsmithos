@@ -1,0 +1,10 @@
+#!/bin/bash
+export MESA_LOADER_DRIVER_OVERRIDE=zink
+export GALLIUM_DRIVER=zink
+export OMP_NUM_THREADS=16
+case $1 in
+    "blender") blender --python ~/LeadSmithOS/core/blender_handheld_cfg.py ;;
+    "tidal") chrt -f 99 sclang ~/LeadSmithOS/core/tidal_startup.scd ;;
+    "agilityflow") python3 ~/LeadSmithOS/apps/AgilityFlow/visualizer.py ;;
+    "forge") python3 ~/LeadSmithOS/sdk/ls-sdk.py "NewApp" ;;
+esac

@@ -1,0 +1,4 @@
+{
+  "name": "Lava Lamp",
+  "shader": "float aspect=1920.0/1080.0; float2 v=uv-0.5; v.x *= aspect; float zoom=0.99*z; float4 p=ptx.Sample(s1, uv*zoom+(1.0-zoom)*0.5); float3 blobs = 0; for(int i=0; i<3; i++) { float2 pos = float2(sin(t*0.5 + i*2.0), cos(t*0.3 + i*1.5)) * 0.4; float d = length(v - pos); blobs += float3(0.1, 0.8, 0.2) * (0.05 / (d + 0.01)) * (m + 0.1); } return saturate(p*0.92 + float4(blobs, 1.0));"
+}

@@ -1,0 +1,4 @@
+{
+  "name": "Warp Tunnel",
+  "shader": "float aspect = 1920.0/1080.0; float2 v = (uv - 0.5); v.x *= aspect; float ang = atan2(v.y, v.x); float dist = length(v); float2 tube = float2(ang * 2.0 / 3.1415, 0.2 / (dist + 0.01) + t * 2.0); float pattern = sin(tube.x * 5.0) * cos(tube.y * 5.0); float wall = smoothstep(0.2, 0.5, pattern * (b + 0.5)); float3 col = float3(0.1, 0.4, 1.0) * wall * (1.0 - dist); float zoom = 0.98 * z; float4 p = ptx.Sample(s1, uv * zoom + (1.0 - zoom) * 0.5); return saturate(p * 0.94 + float4(col, 1.0));"
+}

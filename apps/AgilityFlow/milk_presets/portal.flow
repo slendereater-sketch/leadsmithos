@@ -1,0 +1,4 @@
+{
+  "name": "Hyper Portal",
+  "shader": "float zoom=(0.92 + b*0.15)*z; float decay=0.96; float aspect=1920.0/1080.0; float2 v=uv-0.5; v.x *= aspect; float d=length(v); float ring=smoothstep(0.1, 0.0, abs(d - b*1.2)); float4 p=ptx.Sample(s1, uv*zoom+(1.0-zoom)*0.5); float3 neon = float3(1.0, 0.1, 0.6) * (b*3.0 + 0.3); return saturate(p*decay + float4(neon*ring, 1.0));"
+}

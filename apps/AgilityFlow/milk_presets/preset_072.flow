@@ -1,0 +1,4 @@
+{
+  "name": "Flow Preset 72 (Glitch)",
+  "shader": "float2 g = uv; if(frac(t*5.0 + g.y*10.0) > 0.9) g.x += sin(t*20.0)*0.05*tr; float4 p = ptx.Sample(s1, g * z); float3 col = float3(0.13, 0.33, 0.47) * (smoothstep(0.98, 1.0, frac(uv.y * 20.0 + t)) + 0.05) * (tr + 0.1); return saturate(p * 0.85 + float4(col, 1.0));"
+}

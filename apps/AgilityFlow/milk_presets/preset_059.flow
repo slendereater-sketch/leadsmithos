@@ -1,0 +1,4 @@
+{
+  "name": "Flow Preset 59 (Geometric)",
+  "shader": "float2 v = (uv - 0.5); float a = atan2(v.y, v.x) + t; float r = length(v); float d = cos(floor(0.5 + a * 6.0 / 6.28) * 6.28 / 6.0 - a) * r; float shape = smoothstep(0.02, 0.0, abs(d - 0.3 - b * 0.2)); float4 p = ptx.Sample(s1, uv * (0.97 * z) + (1.0 - 0.97 * z) * 0.5); return saturate(p * 0.94 + float4(float3(0.15, 0.48, 0.64) * (shape + 0.05) * (b + 0.1), 1.0));"
+}

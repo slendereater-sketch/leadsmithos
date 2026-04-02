@@ -1,0 +1,4 @@
+{
+  "name": "Techno Matrix",
+  "shader": "float rot = t*0.1 + m*0.5; float2x2 rm = float2x2(cos(rot), -sin(rot), sin(rot), cos(rot)); float zoom=(1.01 + m*0.05)*z; float decay=0.95; float2 v=uv-0.5; v = mul(rm, v); float2 g = abs(frac(v*15.0) - 0.5); float gridLine = smoothstep(0.15, 0.0, min(g.x, g.y)) * (m*3.0 + 0.2); float4 p=ptx.Sample(s1, uv*zoom+(1.0-zoom)*0.5); float3 col = float3(0.0, 1.0, 0.9) * gridLine; return saturate(p*decay + float4(col, 1.0));"
+}

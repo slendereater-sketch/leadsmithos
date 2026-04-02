@@ -1,0 +1,4 @@
+{
+  "name": "Digital Rain",
+  "shader": "float2 g = uv * float2(40.0, 1.0); float speed = t * 2.0 + m * 5.0; float rain = frac(sin(floor(g.x)*123.45) + g.y + speed); float trail = smoothstep(0.1, 0.0, rain); float zoom = 1.0; float4 p = ptx.Sample(s1, uv); float3 col = float3(0.0, 1.0, 0.3) * trail * (tr*2.0 + 0.2); return saturate(p*0.8 + float4(col, 1.0));"
+}

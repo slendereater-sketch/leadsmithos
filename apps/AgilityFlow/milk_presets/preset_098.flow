@@ -1,0 +1,4 @@
+{
+  "name": "Flow Preset 98 (Grid)",
+  "shader": "float2 g = frac(uv * 12.5 + t * 0.2); float grid = smoothstep(0.1, 0.0, min(g.x, g.y)) * (m + 0.1); float4 p = ptx.Sample(s1, uv * z); float3 col = float3(0.94, 0.42, 0.41) * grid * (m * 2.0 + 0.2); return saturate(p * 0.9 + float4(col, 1.0));"
+}

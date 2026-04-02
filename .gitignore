@@ -1,0 +1,12 @@
+# Exclude large ISO files
+*.iso
+
+# Exclude Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Exclude local configuration or temporary files
+.env
+*.log
+.DS_Store
