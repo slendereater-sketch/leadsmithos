@@ -10,6 +10,16 @@ echo "=========================================="
 echo "   IGNITING THE LEADSMITH Z2A FORGE       "
 echo "=========================================="
 
+# 0. BASE DEPENDENCIES & PRIVILEGES
+if [ "$EUID" -ne 0 ]; then
+    echo "[!] ERROR: THIS FORGE REQUIRES ROOT ACCESS. RUN WITH SUDO."
+    exit 1
+fi
+
+echo "[âš™] REINFORCING BASE SYSTEM (GIT, PYTHON, DEVEL)..."
+pacman -Sy --needed --noconfirm git base-devel python python-pip python-setuptools
+echo "[âœ“] BASE REINFORCEMENTS COMPLETE."
+
 # 1. CORE HARDWARE DRIVERS (ROG ALLY Z2A)
 echo "[âš™] OPTIMIZING KERNEL FOR Z2A ARCHITECTURE..."
 # Add the asus-linux repository for specialized handheld kernels
